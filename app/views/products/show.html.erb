@@ -1,0 +1,18 @@
+<h1><%= @product.name %></h1>
+<p><%= @product.description %></p>
+<p>Price: <%= number_to_currency(@product.price) %></p>
+<p>Stock available: <%= @product.stock %></p>
+
+<% if current_user %>
+  <%= form_with(model: [@product, @product.orders.build], url: product_orders_path(@product), html: {class: 'buy-form'}) do |form| %>
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, min: 1, max: @product.stock %>
+    <%= form.submit "Buy", class: "btn btn-primary" %>
+  <% end %>
+
+  <% if current_user.seller && current_user.seller == @product.seller %>
+    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-secondary" %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', products_path %>

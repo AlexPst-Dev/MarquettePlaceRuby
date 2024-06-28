@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marquette Place</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav>
+    <div class="logo">
+      <%= link_to products_path do %>
+          <h2 class="logo">Marquette Place</h2>
+      <% end %>
+    </div>
+      <ul>
+        <% if current_user %>
+          <li class="profile"><div class="circle"></div> <%= current_user.email %></li> <!-- Afficher l'email de l'utilisateur connecté -->
+          <li class="logout-link"><%= link_to 'Se déconnecter >', logout_path, method: :delete %></li>
+          <% if current_user.buyer? %>
+            <li><%= button_to 'Devenir vendeur', toggle_role_path, method: :post %></li>
+          <% else %>
+            <!-- Optionnel : bouton caché une fois que l'utilisateur est vendeur -->
+            <!-- <li><%= button_to 'Switch to Buyer', toggle_role_path, method: :post %></li> -->
+          <% end %>
+        <% else %>
+          <li><%= link_to 'Login', login_path %></li>
+          <li><%= link_to 'Register', register_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <%= render 'layouts/flash' %>
+
+    <%= yield %>
+  </body>
+</html>

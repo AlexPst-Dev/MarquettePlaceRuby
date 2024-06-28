@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Nos produits</h1>
+
+<div class="products" id="products">
+  <% @products.each do |product| %>
+    <div class="product">   
+      <%= render product %>
+      <button class="btn-link">
+        <%= link_to "Voir le produit", product %>
+      </button>
+    </div>
+  <% end %>
+</div>
+
+<% if current_user&.seller %>
+  <button class="btn-link">
+    <%= link_to "Vendre un nouveau produit", new_product_path %>
+  </button>
+<% end %>

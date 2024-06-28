@@ -1,0 +1,201 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Global */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f9fb;
+  padding: 2rem;
+}
+
+.btn-link,
+form input[type="submit"] {
+  background-color: rgb(50, 50, 50);
+  border: none;
+  border-radius: 0.25rem;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+.btn-link a,
+form input[type="submit"] {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.notice {
+  color: green;
+  background-color: #e6ffe6;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.alert {
+  color: red;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.notice,
+.alert {
+  position: absolute;
+  top: 6%;
+  left: 25%;
+}
+
+/* Navigation */
+.logo {
+  cursor: pointer;
+}
+.logo a {
+  text-decoration: none;
+  color: unset;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: end;
+}
+
+nav ul .profile {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+nav ul .profile .circle {
+  padding: 1rem;
+  border-radius: 25%;
+  background-color: lightgreen;
+}
+
+nav ul .logout-link a {
+  text-decoration: none;
+  color: unset;
+}
+
+/* Products */
+.products {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  min-width: 20%;
+}
+
+.product .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product .product-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product .stock {
+  gap: 2rem;
+}
+
+.product .product-header,
+.product .stock {
+  display: flex;
+}
+
+.product .product-header .titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product .name {
+  font-size: 1.5rem;
+}
+
+/* Forms */
+form {
+  max-width: 50%;
+  background-color: white;
+  padding: 4rem 2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin: auto;
+  border-radius: 1rem;
+  gap: 1rem;
+  max-width: unset;
+}
+
+.buy-form {
+  padding: 1rem;
+  max-width: unset;
+  width: fit-content;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form textarea {
+  border: none;
+  border-bottom: 1px solid rgb(50, 50, 50);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"] {
+  padding: 0.25rem 0;
+}

@@ -1,0 +1,31 @@
+<div class="content" id="<%= dom_id product %>">
+
+  <div class="product-header">
+    <div class="titles">
+      <span class="name">
+        <strong><%= product.name %></strong>
+      </span>
+
+      <span class="description">
+        <%= product.description %>
+      </span>
+    </div>
+
+    <span class="price">
+      <%= product.price %> €
+    </span>
+  </div>
+
+
+  <div class="stock">
+    <div>
+      <strong>Stock:</strong>
+      <%= product.stock %>
+    </div>
+    <div>
+      <strong>Sell by:</strong>
+      <%= product.seller_id %>
+    </div>
+  </div>
+
+</div>

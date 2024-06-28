@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TP noté pour l'école SDV.
 
-Things you may want to cover:
+J'ai pu implémenter les formulaires d'inscription, de connexion et de gestion des produits mais je n'ai pas utilisé order.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+J'ai également pu rajouter un peu de style.
